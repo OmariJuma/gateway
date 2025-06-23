@@ -21,12 +21,12 @@ public class Routes {
     @Bean
     public RouterFunction<ServerResponse> orderServiceRoute(){
         return GatewayRouterFunctions.route("order_service")
-                .route(RequestPredicates.path("/api/v1/orders"), HandlerFunctions.http("http://localhost:8083"))
+                .route(RequestPredicates.path("/api/v1/orders"), HandlerFunctions.http("http://localhost:8081"))
                 .build();
     }  @Bean
     public RouterFunction<ServerResponse> inventoryServiceRoute(){
         return GatewayRouterFunctions.route("inventory_service")
-                .route(RequestPredicates.path("/api/v1/inventory"), HandlerFunctions.http("http://localhost:8084"))
+                .route(RequestPredicates.path("/api/v1/inventory"), HandlerFunctions.http("http://localhost:8083"))
                 .build();
     }
 }
